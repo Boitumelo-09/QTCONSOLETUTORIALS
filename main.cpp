@@ -9,12 +9,19 @@ static void print(std::string name) {
 static void qtPrint(QString name) {
     QTextStream input(stdin);
     QTextStream output(stdout);
-    output <<"Hello "<< name;
+
+    
+    output <<"Enter Something : ";
+    output.flush();
+    QString something = input.readLine();
+    
+    
+    output << "Hello " << name << ". You have entered : " << something;
 }
 int main(int argc, char *argv[])
 {
     QCoreApplication app(argc, argv);
-    print("Boipelo");
+   
     qtPrint("Boipelo Chaiman");
     return app.exec();
 }
